@@ -120,10 +120,6 @@ Threads
 
 - ThreadImport : Loads blocks from blk*.dat files or bootstrap.dat.
 
-- ThreadScriptCheck : Verifies block scripts.
-
-- ThreadImport : Loads blocks from blk*.dat files or bootstrap.dat.
-
 - StartNode : Starts other threads.
 
 - ThreadGetMyExternalIP : Determines outside-the-firewall IP address, sends addr message to connected peers when it determines it.
