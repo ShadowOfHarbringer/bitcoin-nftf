@@ -9,6 +9,7 @@
 #include "checkpoints.h"
 #include "coincontrol.h"
 #include "net.h"
+#include "checkpoints.h"
 
 #include <boost/algorithm/string/replace.hpp>
 #include <openssl/rand.h>
@@ -1356,8 +1357,12 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend,
 
                 // Check that enough fee is included
                 int64_t nPayFee = nTransactionFee * (1 + (int64_t)nBytes / 1000);
-                bool fAllowFree = AllowFree(dPriority);
-                int64_t nMinFee = GetMinFee(wtxNew, nBytes, fAllowFree, GMF_SEND);
+                
+				//Bitcoin NFTF Patch - by ShadowOfHarbringer START
+				bool fAllowFree = true;
+                //Bitcoin NFTF Patch - by ShadowOfHarbringer END
+
+				int64_t nMinFee = GetMinFee(wtxNew, nBytes, fAllowFree, GMF_SEND);
                 if (nFeeRet < max(nPayFee, nMinFee))
                 {
                     nFeeRet = max(nPayFee, nMinFee);
