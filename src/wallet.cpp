@@ -9,7 +9,6 @@
 #include "checkpoints.h"
 #include "coincontrol.h"
 #include "net.h"
-#include "checkpoints.h"
 
 #include <boost/algorithm/string/replace.hpp>
 #include <openssl/rand.h>
